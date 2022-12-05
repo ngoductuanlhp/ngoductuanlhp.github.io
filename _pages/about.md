@@ -6,7 +6,7 @@ subtitle: AI Research Resident at VinAI Research.
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: portrait.jpg
   image_circular: false # crops the image to make it circular
   address: #>
     #<p>555 your office number</p>
@@ -18,8 +18,8 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: false # includes social icons at the bottom of the page
 ---
 
-Hi! I am an AI Research Resident at [VinAI Research](https://vinai.io/), advised by Professor [Luu Anh Tuan](https://tuanluu.github.io/). Prior to that, I received my B.E. degree in Computer Engineering from the [Ho Chi Minh City University of Technology](https://hcmut.edu.vn/), Vietnam.
+Hi! I am an AI Research Resident at [VinAI Research](https://vinai.io/), advised by Dr [Khoi Nguyen](https://khoinguyen.org/). Prior to that, I received my B.E. degree in Computer Engineering from the [Ho Chi Minh City University of Technology](https://hcmut.edu.vn/), Vietnam.
 
-I am broadly interested in demystifying deep learning and developing reliable machine learning systems. Currently, I am focusing on explaining the adversarial examples phenomenon and improving adversarial robustness. I am also interested in generative modeling and the applications of causal inference.
+My primary research interest is about Computer Vision, specifically in 3D Understanding. Given a scene represented by various kinds of 3D data, my ultimate research question is to understandthe geometry as well as the semantic meaning of each location in the scene, giving rise to a holistic understanding of the scene.
 
 This is my [CV](/assets/pdf/CV.pdf).
