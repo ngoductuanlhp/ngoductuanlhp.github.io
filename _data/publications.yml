@@ -1,0 +1,42 @@
+- id: ISBNet
+  title: "ISBNet: a 3D Point Cloud Instance Segmentation Network with Instance-aware Sampling and Box-aware Dynamic Convolution"
+  venue: CVPR, 2023
+  description: "Introduce an efficient sampling strategy and propose leveraging the bounding box as a geometric cue for the 3D point cloud instance segmentation"
+  # project_page: "https://hypernerf.github.io"
+  github: VinAIResearch/ISBNet
+  arxiv: 2303.00246
+  image: isbnet_demo.jpg
+  # image_mouseover: isbnet_demo.jpg
+  authors:
+    - tuanngo
+    - sonhua
+    - khoinguyen
+
+- id: GeoFormer
+  title: "Geodesic-Former: A Geodesic-Guided Few-Shot 3D Point Cloud Instance Segmenter"
+  venue: ECCV, 2022
+  description: "Propose a new task, Few-shot 3D point cloud instance segmentation, and introduce a geodesic-based 3D instance segmenter"
+  # project_page: "https://fig-nerf.github.io"
+  github: VinAIResearch/GeoFormer
+  arxiv: 2207.10859
+  image: geoformer_demo.jpg
+  # image_mouseover: geoformer_demo.jpg
+  authors:
+    - tuanngo
+    - khoinguyen
+
+- id: GAC3D
+  title: "GAC3D: improving monocular 3D object detection with ground-guide model and adaptive convolution"
+  venue: PeerJ, 2021
+  description: "Propose a new monocular 3D detection framework leveraging the ground plane model and depth-adaptive convolution"
+  # project_page: "https://fig-nerf.github.io"
+  github: ngoductuanlhp/GAC3D
+  open_access: "https://peerj.com/articles/cs-686/"
+  image: GAC3D_demo.jpg
+  image_mouseover: GAC3D_short.mp4
+  authors:
+    - tuanngo
+    - quanbui
+    - anhpham
+    - dungnguyen
+

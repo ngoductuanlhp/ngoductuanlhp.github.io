@@ -1,0 +1,25 @@
+tuanngo:
+  first_name: Tuan
+  last_name: Ngo
+  website: https://ngoductuanlhp.github.io/
+  is_me: true
+khoinguyen:
+  first_name: Khoi
+  last_name: Nguyen
+  website: https://www.khoinguyen.org/
+sonhua:
+  first_name: Binh-Son
+  last_name: Hua
+  website: https://www.khoinguyen.org/
+quanbui:
+  first_name: Quan
+  last_name: Bui
+  website: https://scholar.google.com/citations?user=nNyPEwcAAAAJ
+dungnguyen:
+  first_name: Dung
+  last_name: Nguyen
+  website: https://scholar.google.com/citations?user=xV7uHJgAAAAJ
+anhpham:
+  first_name: Hoang-Anh
+  last_name: Pham
+  website: https://scholar.google.com/citations?user=sGPFOAYAAAAJ
