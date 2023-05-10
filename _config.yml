@@ -35,7 +35,7 @@ google_scholar: 2_G-DxIAAAAJ
 # google_analytics: G-MFWSBLRKG0
 
 # Build settings
-theme: jekyll-theme-cayman
+theme: minima
 plugins:
   - jekyll-feed
 
