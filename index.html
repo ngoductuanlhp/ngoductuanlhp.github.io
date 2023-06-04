@@ -175,6 +175,12 @@ layout: null
                 <span>Code</span>
               </a>
               {% endif %}
+              {% if publication.video %}
+              <a class="external-link button is-small is-ghost" href="{{ publication.video }}">
+                <span class="icon"><i class="fas fa-youtube"></i></span>
+                <span>Video</span>
+              </a>
+              {% endif %}
             </div>
             <!--/ Publication Links. -->
           </div>
