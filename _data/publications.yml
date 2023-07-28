@@ -1,3 +1,18 @@
+- id: GaPro
+  title: "GaPro: Box-Supervised 3D Point Cloud Instance Segmentation Using Gaussian Processes as Pseudo Labelers"
+  venue: ICCV, 2023
+  description: "Tackle the box-supervised 3D point cloud instance segmentation by using Gaussian Processes to generate pseudo labels"
+  # project_page: "https://hypernerf.github.io"
+  # github: VinAIResearch/ISBNet
+  arxiv: 2307.13251
+  # video: "https://www.youtube.com/watch?v=uoOApyX-NUY"
+  image: gapro_demo.jpg
+  # image_mouseover: isbnet_demo.jpg
+  authors:
+    - tuanngo
+    - sonhua
+    - khoinguyen
+
 - id: ISBNet
   title: "ISBNet: a 3D Point Cloud Instance Segmentation Network with Instance-aware Sampling and Box-aware Dynamic Convolution"
   venue: CVPR, 2023
