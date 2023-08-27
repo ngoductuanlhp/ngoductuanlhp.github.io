@@ -3,7 +3,7 @@
   venue: ICCV, 2023
   description: "Tackle the box-supervised 3D point cloud instance segmentation by using Gaussian Processes to generate pseudo labels"
   # project_page: "https://hypernerf.github.io"
-  # github: VinAIResearch/ISBNet
+  github: VinAIResearch/GaPro
   arxiv: 2307.13251
   # video: "https://www.youtube.com/watch?v=uoOApyX-NUY"
   image: gapro_demo.jpg
