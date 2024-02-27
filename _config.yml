@@ -20,10 +20,12 @@
 
 title: Tuan Duc Ngo
 name: Tuan Duc Ngo
-position: AI Research Resident 
+position: PhD Student 
 email: ductuan.ngo99@gmail.com
 description: >-
-  I am a PhD student in Computer Science of [UMass Amherst](https://www.umass.edu/), USA. Prior to that, I was an AI Research Resident at [VinAI Research](https://vinai.io/). I received my B.E. degree in Computer Engineering from the [Ho Chi Minh City University of Technology](https://hcmut.edu.vn/), Vietnam.
+  I am a first-year PhD student in Computer Science of [UMass Amherst](https://www.umass.edu/), USA, advised by [Prof. Evangelos Kalogerakis](https://people.cs.umass.edu/~kalo/) and [Prof. Chuang Gan](https://people.csail.mit.edu/ganchuang/). Prior to that, I was an AI Research Resident at [VinAI Research](https://vinai.io/). I received my B.E. degree in Computer Engineering from the [Ho Chi Minh City University of Technology](https://hcmut.edu.vn/), Vietnam.
+
+  Email: ductuan.ngo99 (at) gmail (dot) com
 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://ngoductuanlhp.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
