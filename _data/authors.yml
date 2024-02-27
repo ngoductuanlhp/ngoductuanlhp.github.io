@@ -23,3 +23,23 @@ anhpham:
   first_name: Hoang-Anh
   last_name: Pham
   website: https://scholar.google.com/citations?user=sGPFOAYAAAAJ
+phucnguyen:
+  first_name: Phuc
+  last_name: Nguyen
+  website: https://github.com/PhucNDA/
+chuanggan:
+  first_name: Chuang
+  last_name: Gan
+  website: https://people.csail.mit.edu/ganchuang/
+evangeloskalogerakis:
+  first_name: Evangelos
+  last_name: Kalogerakis
+  website: https://people.cs.umass.edu/~kalo/
+anhtran:
+  first_name: Anh
+  last_name: Tran
+  website: https://scholar.google.com/citations?user=FYZ5ODQAAAAJ&hl=en
+cuongpham:
+  first_name: Cuong
+  last_name: Pham
+  website: https://sites.google.com/view/cuongpham/home

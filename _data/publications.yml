@@ -1,3 +1,23 @@
+- id: Open3DIS
+  title: "Open3DIS: Open-vocabulary 3D Instance Segmentation with 2D Mask Guidance"
+  venue: CVPR, 2024
+  description: "Tackle the open-vocabulary 3D point cloud instance segmentation by using 2D prior"
+  project_page: "https://open3dis.github.io/"
+  # github: VinAIResearch/GaPro
+  arxiv: 2312.10671
+  # video: "https://www.youtube.com/watch?v=uoOApyX-NUY"
+  image: open3dis_demo.jpg
+  # image_mouseover: isbnet_demo.jpg
+  first_authors:
+    - phucnguyen
+    - tuanngo
+  authors:
+    - chuanggan
+    - evangeloskalogerakis
+    - anhtran
+    - cuongpham
+    - khoinguyen
+
 - id: GaPro
   title: "GaPro: Box-Supervised 3D Point Cloud Instance Segmentation Using Gaussian Processes as Pseudo Labelers"
   venue: ICCV, 2023
@@ -8,8 +28,9 @@
   # video: "https://www.youtube.com/watch?v=uoOApyX-NUY"
   image: gapro_demo.jpg
   # image_mouseover: isbnet_demo.jpg
-  authors:
+  first_authors:
     - tuanngo
+  authors:
     - sonhua
     - khoinguyen
 
@@ -23,8 +44,9 @@
   video: "https://www.youtube.com/watch?v=uoOApyX-NUY"
   image: isbnet_demo.jpg
   # image_mouseover: isbnet_demo.jpg
-  authors:
+  first_authors:
     - tuanngo
+  authors:
     - sonhua
     - khoinguyen
 
@@ -37,8 +59,9 @@
   arxiv: 2207.10859
   image: geoformer_demo.jpg
   # image_mouseover: geoformer_demo.jpg
-  authors:
+  first_authors:
     - tuanngo
+  authors:
     - khoinguyen
 
 - id: GAC3D
@@ -50,9 +73,10 @@
   open_access: "https://peerj.com/articles/cs-686/"
   image: GAC3D_demo.jpg
   image_mouseover: GAC3D_short.mp4
-  authors:
-    - tuanngo
+  first_authors:
     - quanbui
+    - tuanngo
+  authors:
     - anhpham
     - dungnguyen
 
