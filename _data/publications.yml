@@ -6,7 +6,7 @@
   github: snap-research/DELTA_densetrack3d
   arxiv: 2410.24211
   # video: "https://www.youtube.com/watch?v=uoOApyX-NUY"
-  image: yellow-duck.mp4
+  image: delta.mp4
   image_mouseover: yellow-duck.mp4
   first_authors:
     - tuanngo
