@@ -3,9 +3,7 @@
   venue: CVPR, 2025
   description: "A diffusion model that generates 4D video -- a grid of video frames with both time and viewpoint axes."
   project_page: "https://snap-research.github.io/4Real-Video/"
-  # github: snap-research/DELTA_densetrack3d
   arxiv: 2412.04462
-  # video: "https://www.youtube.com/watch?v=uoOApyX-NUY"
   image: 4real_video.png
   image_mouseover: 4real_video.mp4
   first_authors:
@@ -28,7 +26,6 @@
   project_page: "https://snap-research.github.io/DELTA/"
   github: snap-research/DELTA_densetrack3d
   arxiv: 2410.24211
-  # video: "https://www.youtube.com/watch?v=uoOApyX-NUY"
   image: delta.png
   image_mouseover: yellow-duck.mp4
   first_authors:
