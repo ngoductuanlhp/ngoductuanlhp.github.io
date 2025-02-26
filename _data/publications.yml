@@ -1,3 +1,26 @@
+- id: 4Real-Video
+  title: "4Real-Video: Learning Generalizable Photo-Realistic 4D Video Diffusion"
+  venue: CVPR, 2025
+  description: "A diffusion model that generates 4D video -- a grid of video frames with both time and viewpoint axes."
+  project_page: "https://snap-research.github.io/4Real-Video/"
+  # github: snap-research/DELTA_densetrack3d
+  arxiv: 2412.04462
+  # video: "https://www.youtube.com/watch?v=uoOApyX-NUY"
+  image: 4real_video.png
+  image_mouseover: 4real_video.mp4
+  first_authors:
+    - chaoyangwang
+    - peiyezhuang
+    - tuanngo
+  authors:
+    - willimenapace
+    - aliaksandrsiarohin
+    - michaelvasilkovsky
+    - ivanskorokhodov
+    - sergeytulyakov
+    - peterwonka
+    - hsinyinglee
+
 - id: DELTA
   title: "DELTA: Dense Efficient Long-range 3D Tracking for Any video"
   venue: ICLR, 2025
