@@ -1,6 +1,8 @@
 - id: 4Real-Video
   title: "4Real-Video: Learning Generalizable Photo-Realistic 4D Video Diffusion"
   venue: CVPR, 2025
+  awards: 
+    - Highlight
   description: "A diffusion model that generates 4D video -- a grid of video frames with both time and viewpoint axes."
   project_page: "https://snap-research.github.io/4Real-Video/"
   arxiv: 2412.04462
