@@ -75,6 +75,64 @@ section.section {
     }
 }
 
+.experience-list {
+    list-style: disc;
+    padding-left: 1.25rem;
+}
+
+.experience-item {
+    margin-bottom: 1rem;
+
+    .experience-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .experience-title-block {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        flex-wrap: wrap;
+    }
+
+    .experience-logo {
+        height: 36px;
+        width: auto;
+        object-fit: contain;
+        border-radius: 4px;
+        flex-shrink: 0;
+    }
+
+    .experience-role {
+        font-weight: 700;
+    }
+
+    .experience-dates {
+        color: #555;
+        font-size: 0.92rem;
+        white-space: nowrap;
+    }
+
+    .experience-desc {
+        margin-top: 0.15rem;
+        color: #222;
+    }
+
+    .experience-mentors {
+        font-size: 0.92rem;
+        color: #555;
+
+        a {
+            color: #3273dc;
+            text-decoration: none;
+            &:hover { text-decoration: underline; }
+        }
+    }
+}
+
 .publication-filter-btns {
     margin-left: 1rem;
     vertical-align: middle;
