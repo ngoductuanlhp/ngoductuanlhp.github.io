@@ -22,16 +22,19 @@ title: Tuan Duc Ngo
 name: Tuan Duc Ngo
 position: PhD Student 
 email: ductuan.ngo99@gmail.com
-description: >-
-  I am a third-year PhD student in Computer Science of [UMass Amherst](https://www.umass.edu/), USA, advised by [Prof. Evangelos Kalogerakis](https://people.cs.umass.edu/~kalo/) and [Prof. Chuang Gan](https://people.csail.mit.edu/ganchuang/). 
+description: |-
+  I'm a PhD student in Computer Science at [UMass Amherst](https://www.umass.edu/), advised by [Prof. Evangelos Kalogerakis](https://people.cs.umass.edu/~kalo/) and [Prof. Chuang Gan](https://people.csail.mit.edu/ganchuang/).
+
   I was a research intern at [Adobe Research](https://research.adobe.com/). Previously, I interned at [Snap Research](https://research.snap.com/), working with [Dr. Chaoyang Wang](https://mightychaos.github.io/) on 4D reconstruction.
-  Prior to my Ph.D., I was an AI Research Resident at [VinAI Research](https://vinai.io/), working closely with [Dr. Khoi Nguyen](https://www.khoinguyen.org/). I received my B.E. degree in Computer Engineering from the [Ho Chi Minh City University of Technology](https://hcmut.edu.vn/), Vietnam.
+
+  Prior to my Ph.D., I was an AI Research Resident at [VinAI Research](https://vinai.io/), working closely with [Dr. Khoi Nguyen](https://www.khoinguyen.org/). I received my B.E. degree in Computer Engineering from the [Ho Chi Minh City University of Technology](https://hcmut.edu.vn/).
 
   Email: ductuan.ngo99 (at) gmail (dot) com
 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://ngoductuanlhp.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: DTuanNgo
+linkedin_url: "https://www.linkedin.com/in/tuan-ngo-1999-hcmut/"
 github_username: ngoductuanlhp
 google_scholar: 2_G-DxIAAAAJ
 # google_analytics: G-MFWSBLRKG0
