@@ -1,3 +1,40 @@
+- id: DAGE
+  title: "DAGE: Dual-Stream Architecture for Efficient and Fine-Grained Geometry Estimation"
+  venue: CVPR, 2026
+  description: "Estimate accurate camera poses and high-fidelity 3D geometry at 2K resolution via an efficient dual-stream architecture."
+  # project_page: "https://snap-research.github.io/4Real-Video/"
+  # arxiv: 2412.04462
+  image: dage.png
+  image_mouseover: dage_video.mp4
+  first_authors:
+    - tuanngo
+  authors:
+    - jiahuihuang
+    - seoungwugoh
+    - evangeloskalogerakis
+    - chuanggan
+    - joonyounglee
+
+- id: DELTAv2
+  title: "DELTAv2: Accelerating Dense 3D Tracking"
+  venue: preprint, 2025
+  description: "Accelerate dense, long-range, 3D point tracking with 5-100x speedup"
+  project_page: "https://snap-research.github.io/DELTAv2/"
+  github: snap-research/DenseTrack3Dv2
+  arxiv: 2508.01170
+  image: deltav2.png
+  image_mouseover: deltav2_video.mp4
+  first_authors:
+    - tuanngo
+  authors:
+    - ashkanmirzaei
+    - guochengqian
+    - hanwenliang
+    - chuanggan
+    - evangeloskalogerakis
+    - peterwonka
+    - chaoyangwang
+
 - id: 4Real-Video
   title: "4Real-Video: Learning Generalizable Photo-Realistic 4D Video Diffusion"
   venue: CVPR, 2025
