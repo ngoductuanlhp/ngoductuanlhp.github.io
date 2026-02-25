@@ -1,0 +1,11 @@
+teaching:
+  - role: "Teaching Assistant"
+    courses:
+      - name: "Intelligent Visual Computing (COMPSCI 674, Fall 2024)"
+        url: "https://kalo-ai.github.io/courses/visual_computing/index.html"
+      - name: "Game Programming (COMPSCI 576, Fall 2023)"
+        url: "https://kalo-ai.github.io/courses/game_programming/index.html"
+
+reviewing:
+  - type: "Reviewer"
+    venues: "CVPR (2024, 2025, 2026), ICCV (2025), ECCV (2024, 2026), NeurIPS (2025), ICLR (2025, 2026), AAAI (2025, 2026), IEEE Transactions on Image Processing"

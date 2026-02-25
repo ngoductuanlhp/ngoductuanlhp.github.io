@@ -1,5 +1,6 @@
 - id: DAGE
   title: "DAGE: Dual-Stream Architecture for Efficient and Fine-Grained Geometry Estimation"
+  highlight: true
   venue: CVPR, 2026
   description: "Estimate accurate camera poses and high-fidelity 3D geometry at 2K resolution via an efficient dual-stream architecture."
   # project_page: "https://snap-research.github.io/4Real-Video/"
@@ -17,7 +18,7 @@
 
 - id: DELTAv2
   title: "DELTAv2: Accelerating Dense 3D Tracking"
-  venue: preprint, 2025
+  venue: Preprint, 2025
   description: "Accelerate dense, long-range, 3D point tracking with 5-100x speedup"
   project_page: "https://snap-research.github.io/DELTAv2/"
   github: snap-research/DenseTrack3Dv2
@@ -60,6 +61,7 @@
 
 - id: DELTA
   title: "DELTA: Dense Efficient Long-range 3D Tracking for Any video"
+  highlight: true
   venue: ICLR, 2025
   description: "Capture the dense, long-range, 3D point trajectories from casual videos in a feed-forward manner"
   project_page: "https://snap-research.github.io/DELTA/"
@@ -79,6 +81,7 @@
 
 - id: Open3DIS
   title: "Open3DIS: Open-vocabulary 3D Instance Segmentation with 2D Mask Guidance"
+  highlight: true
   venue: CVPR, 2024
   description: "Tackle the open-vocabulary 3D point cloud instance segmentation by using 2D prior"
   project_page: "https://open3dis.github.io/"
@@ -115,6 +118,7 @@
 
 - id: ISBNet
   title: "ISBNet: a 3D Point Cloud Instance Segmentation Network with Instance-aware Sampling and Box-aware Dynamic Convolution"
+  highlight: true
   venue: CVPR, 2023
   description: "Introduce an efficient sampling strategy and propose leveraging the bounding box as a geometric cue for the 3D point cloud instance segmentation"
   # project_page: "https://hypernerf.github.io"

@@ -8,6 +8,7 @@ layout: null
   <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
   <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta name="description" content="{{ site.description | strip_html | truncate: 160 }}">
   <title>{{ site.name }}</title>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
@@ -26,7 +27,6 @@ layout: null
   <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@700&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link href="{{ '/css/fontawesome.all.min.css' | relative_url }}" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" rel="stylesheet">
   <link href="{{ '/css/bulma.min.css' | relative_url }}" rel="stylesheet">
   <link href="{{ '/css/index.css' | relative_url }}" rel="stylesheet">
@@ -37,6 +37,21 @@ layout: null
 </head>
 
 <body>
+
+  <nav class="navbar is-white is-fixed-top site-navbar" role="navigation">
+    <div class="container is-max-desktop">
+      <div class="navbar-brand">
+        <a class="navbar-item site-navbar-name" href="#">{{ site.name }}</a>
+      </div>
+      <div class="navbar-menu is-active">
+        <div class="navbar-end">
+          <a class="navbar-item" href="#news">News</a>
+          <a class="navbar-item" href="#publications">Publications</a>
+          <a class="navbar-item" href="#services">Services</a>
+        </div>
+      </div>
+    </div>
+  </nav>
 
   <section class="hero">
     <div class="hero-body container is-max-desktop">
@@ -50,31 +65,20 @@ layout: null
 
         <div class="column">
           <h1 class="title">
-            <b>Hello, I'm {{ site.name }}</b>
+            <b>{{ site.name }}</b>
           </h1>
           <div class="content has-text-justified">
             {{ site.description | markdownify }}
-            <div class="buttons">
-              <a class="external-link button is-light" href="assets/CV.pdf">
-                <span class="icon"><i class="fas fa-file"></i></span>
-                <span>CV</span>
-              </a>
-
-              <a class="external-link button is-light"
-                href="https://scholar.google.com/citations?user={{ site.google_scholar }}">
-                <span class="icon"><i class="ai ai-google-scholar"></i></span>
-                <span>Scholar</span>
-              </a>
-
-              <a class="external-link button is-light" href="https://github.com/{{ site.github_username }}">
-                <span class="icon"><i class="fab fa-github"></i></span>
-                <span>Github</span>
-              </a>
-
-              <a class="external-link button is-light" href="https://twitter.com/{{ site.twitter_username }}">
-                <span class="icon"><i class="fab fa-twitter"></i></span>
-                <span>Twitter</span>
-              </a>
+            <div class="profile-links">
+              <span class="profile-links-sep">|</span>
+              <a class="external-link" href="assets/CV.pdf">CV</a>
+              <span class="profile-links-sep">|</span>
+              <a class="external-link" href="https://scholar.google.com/citations?user={{ site.google_scholar }}">Google Scholar</a>
+              <span class="profile-links-sep">|</span>
+              <a class="external-link" href="https://github.com/{{ site.github_username }}">Github</a>
+              <span class="profile-links-sep">|</span>
+              <a class="external-link" href="{{ site.linkedin_url }}">LinkedIn</a>
+              <span class="profile-links-sep">|</span>
             </div>
 
           </div>
@@ -90,61 +94,67 @@ layout: null
     </div>
   </div>
 
-  <section class="section">
+  <section class="section" id="news">
     <div class="container is-max-desktop">
 
       <h2 class="title is-3">News</h2>
       <div class="content">
         <ul>
           {% for news in site.data.news %}
-          <li>
-            <b>{{ news.date }}</b>: {{ news.description | markdownify | remove: '<p>' | remove: '</p>' }}
+          <li {% if forloop.index > 5 %}class="news-extra" style="display:none;"{% endif %}>
+{{ news.date }}: {{ news.description | markdownify | remove: '<p>' | remove: '</p>' }}
           </li>
           {% endfor %}
         </ul>
+        {% if site.data.news.size > 5 %}
+        <a class="news-toggle" onclick="toggleNews(this)" style="cursor:pointer; font-weight:500;">
+          &#9660; Show more
+        </a>
+        {% endif %}
       </div>
 
-      <h2 class="title is-3">Publications</h2>
+      <div class="hr"><hr></div>
+
+      <h2 class="title is-3" id="publications">Publications
+        <span class="publication-filter-btns">
+          <button class="button is-small" id="btn-all" onclick="filterPublications('all')">All</button>
+          <button class="button is-small" id="btn-selected" onclick="filterPublications('selected')">Selected</button>
+        </span>
+      </h2>
 
       {% for publication in site.data.publications %}
-      <div class="publication-block columns">
+      <div class="publication-block columns{% if publication.highlight %} publication-highlight{% endif %}" data-highlight="{{ publication.highlight }}">
 
-        <div class="column is-2">
-          <div class="publication-image {% if publication.image_mouseover %}publication-mousecell{% endif %}">
+        <div class="column is-3">
+          <div class="publication-image">
             {% if publication.image_mouseover contains "mp4" %}
-            <video autoplay preload playsinline class="" height="100%" loop muted width="100%">
+            <video autoplay playsinline loop muted>
               <source src="./images/{{ publication.image_mouseover }}" type="video/mp4">
-              Your browser does not support the video tag.
             </video>
+            {% else %}
+            <img alt="{{ publication.title }}" src="./images/{{ publication.image }}" loading="lazy" />
             {% endif %}
-            <img alt="{{ publication.title }}" src="./images/{{ publication.image }}" />
           </div>
         </div>
 
         <div class="column">
           <div class="content">
-            <h3 class="publication-title"><a href="{{ publication.project_page }}">{{ publication.title }}</a></h3>
+            <h3 class="publication-title">
+              {% if publication.project_page %}
+              <a href="{{ publication.project_page }}">{{ publication.title }}</a>
+              {% else %}
+              {{ publication.title }}
+              {% endif %}
+            </h3>
             <div class="publication-authors">
-              <!-- {% for author_id in publication.authors %}
-              {% assign author = site.data.authors[author_id] %}
-              <span class="author-block {% if author.is_me %}author-me{% endif %}">
-                {% if author.is_me %}
-                {{ author.first_name }} {{author.middle_name}} {{ author.last_name }}{% if forloop.last == false %},{%
-                endif %}
-                {% else %}
-                <a href="{{ author.website }}">{{ author.first_name }} {{ author.middle_name }} {{ author.last_name
-                  }}</a>{% if forloop.last == false %},{% endif %}
-                {% endif %}
-              </span>
-              {% endfor %} -->
+              {% assign co_first = publication.first_authors.size | plus: 0 %}
               {% for author_id in publication.first_authors %}
               {% assign author = site.data.authors[author_id] %}
               <span class="author-block {% if author.is_me %}author-me{% endif %}">
                 {% if author.is_me %}
-                {{ author.first_name }} {{author.middle_name}} {{ author.last_name }}*,
+                {{ author.first_name }} {{author.middle_name}} {{ author.last_name }}{% if co_first > 1 %}*{% endif %},
                 {% else %}
-                <a href="{{ author.website }}">{{ author.first_name }} {{ author.middle_name }} {{ author.last_name
-                  }}*</a>,
+                <a href="{{ author.website }}">{{ author.first_name }} {{ author.middle_name }} {{ author.last_name }}{% if co_first > 1 %}*{% endif %}</a>,
                 {% endif %}
               </span>
               {% endfor %}
@@ -215,6 +225,28 @@ layout: null
     </div>
   </section>
 
+
+  <section class="section" id="services">
+    <div class="container is-max-desktop">
+      <div class="hr"><hr></div>
+      <h2 class="title is-3">Academic Services</h2>
+      <div class="content">
+        {% for item in site.data.services.teaching %}
+        <p>
+          <b>{{ item.role }}</b>:
+          {% for course in item.courses %}
+            <a href="{{ course.url }}" target="_blank">{{ course.name }}</a>{% unless forloop.last %},{% endunless %}
+          {% endfor %}
+        </p>
+        {% endfor %}
+        {% for item in site.data.services.reviewing %}
+        <p><b>{{ item.type }}</b>: {{ item.venues }}</p>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
 
   <footer class="footer">
     <div class="container">
