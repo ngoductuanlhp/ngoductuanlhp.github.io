@@ -13,9 +13,14 @@ function filterPublications(mode) {
     var blocks = document.querySelectorAll('.publication-block');
     blocks.forEach(function(el) {
         if (mode === 'selected') {
-            el.style.display = el.getAttribute('data-highlight') === 'true' ? '' : 'none';
+            var isHighlight = el.getAttribute('data-highlight') === 'true';
+            el.style.display = isHighlight ? '' : 'none';
+            el.classList.remove('publication-highlight');
         } else {
             el.style.display = '';
+            if (el.getAttribute('data-highlight') === 'true') {
+                el.classList.add('publication-highlight');
+            }
         }
     });
     document.getElementById('btn-all').classList.toggle('is-dark', mode === 'all');
@@ -28,4 +33,5 @@ window.addEventListener('scroll', function() {
 });
 
 $(document).ready(function() {
+    filterPublications('selected');
 })
