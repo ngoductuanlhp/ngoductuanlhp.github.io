@@ -21,10 +21,19 @@
   mentors:
     - name: "Chaoyang Wang"
       url: "https://mightychaos.github.io/"
+    - name: "Hsin-Ying Lee"
+      url: "http://hsinyinglee.com/"
+    - name: "Peiye Zhuang"
+      url: "https://payeah.net/"
+    - name: "Peter Wonka"
+      url: "https://peterwonka.net/"
+    - name: "Ashkan Mirzaei"
+      url: "https://ashmrz.github.io/"
+    - name: "Guocheng Qian"
+      url: "https://guochengqian.github.io/"
 
 - role: "AI Research Resident"
-  team: "Computer Vision"
-  company: "VinAI Research"
+  company: "VinAI <em>(acquired by Qualcomm)</em>"
   company_url: "https://vinai.io/"
   logo: "images/logos/vinai_logo.png"
   dates: "Aug 2021 - Jul 2023"
@@ -32,3 +41,5 @@
   mentors:
     - name: "Khoi Nguyen"
       url: "https://www.khoinguyen.org/"
+    - name: "Binh-Son Hua"
+      url: "https://sonhua.github.io/"
