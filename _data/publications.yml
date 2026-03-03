@@ -3,7 +3,7 @@
   highlight: true
   venue: CVPR, 2026
   description: "Estimate accurate camera poses and high-fidelity 3D geometry at 2K resolution via an efficient dual-stream architecture."
-  # project_page: "https://snap-research.github.io/4Real-Video/"
+  project_page: "https://ngoductuanlhp.github.io/dage-site/"
   # arxiv: 2412.04462
   image: dage.png
   image_mouseover: dage_video.mp4
