@@ -116,12 +116,12 @@ layout: null
 
       <div class="hr"><hr></div>
 
-      <h2 class="title is-3" id="publications">Publications
+      <!-- <h2 class="title is-3" id="publications">Publications
         <span class="publication-filter-btns">
           <button class="button is-small" id="btn-selected" onclick="filterPublications('selected')">Selected</button>
           <button class="button is-small" id="btn-all" onclick="filterPublications('all')">All</button>
         </span>
-      </h2>
+      </h2> -->
 
       {% for publication in site.data.publications %}
       <div class="publication-block columns{% if publication.highlight %} publication-highlight{% endif %}" data-highlight="{{ publication.highlight }}">

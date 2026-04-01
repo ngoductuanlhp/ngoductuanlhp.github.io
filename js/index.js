@@ -33,5 +33,6 @@ window.addEventListener('scroll', function() {
 });
 
 $(document).ready(function() {
-    filterPublications('selected');
+    // filterPublications('selected');
+    filterPublications('all');
 })

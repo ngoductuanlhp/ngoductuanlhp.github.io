@@ -4,6 +4,7 @@
   venue: CVPR, 2026
   description: "Estimate accurate camera poses and high-fidelity 3D geometry at 2K resolution via an efficient dual-stream architecture."
   project_page: "https://ngoductuanlhp.github.io/dage-site/"
+  github: ngoductuanlhp/DAGE
   arxiv: 2603.03744
   image: dage.png
   image_mouseover: dage_video.mp4
