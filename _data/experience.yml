@@ -1,4 +1,12 @@
 - role: "Research Intern"
+  company: "Meta"
+  company_url: "https://www.meta.com/emerging-tech/?utm_source=about.meta.com&utm_medium=redirect"
+  logo: "images/logos/meta_logo.png"   
+  dates: "June 2026 - Present"
+  # description: "Work on **3D reconstruction**."
+
+
+- role: "Research Intern"
   company: "Adobe Research"
   company_url: "https://research.adobe.com/"
   logo: "images/logos/adobe_logo.png"   
