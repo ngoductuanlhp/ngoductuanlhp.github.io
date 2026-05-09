@@ -75,62 +75,70 @@ section.section {
     }
 }
 
-.experience-list {
-    list-style: disc;
-    padding-left: 1.25rem;
+.experience-strip {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 1.5rem 1rem;
 }
 
-.experience-item {
-    margin-bottom: 1rem;
+.experience-strip-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1 1 0;
+    min-width: 110px;
+    max-width: 200px;
+}
 
-    .experience-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 0.5rem;
+.experience-strip-logo-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    width: 100%;
+    margin-bottom: 0.6rem;
+}
+
+.experience-strip-logo {
+    max-height: 80px;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.experience-strip-company {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #222;
+    line-height: 1.25;
+    white-space: nowrap;
+
+    a {
+        color: inherit;
+        &:hover { color: #3273dc; }
     }
 
-    .experience-title-block {
-        display: flex;
-        align-items: center;
-        gap: 0.6rem;
-        flex-wrap: wrap;
+    em {
+        font-weight: 500;
+        font-size: 0.7em;
+        color: #666;
     }
+}
 
-    .experience-logo {
-        height: 36px;
-        width: auto;
-        object-fit: contain;
-        border-radius: 4px;
-        flex-shrink: 0;
-    }
+.experience-strip-role {
+    font-size: 0.92rem;
+    color: #333;
+    margin-top: 0.15rem;
+    line-height: 1.25;
+}
 
-    .experience-role {
-        font-weight: 700;
-    }
-
-    .experience-dates {
-        color: #555;
-        font-size: 0.92rem;
-        white-space: nowrap;
-    }
-
-    .experience-desc {
-        margin-top: 0.15rem;
-        color: #222;
-    }
-
-    .experience-mentors {
-        font-size: 0.92rem;
-        color: #555;
-
-        a {
-            color: #3273dc;
-            text-decoration: none;
-            &:hover { text-decoration: underline; }
-        }
-    }
+.experience-strip-dates {
+    font-size: 0.88rem;
+    color: #666;
+    margin-top: 0.15rem;
+    line-height: 1.25;
 }
 
 .publication-filter-btns {

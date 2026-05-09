@@ -1,7 +1,13 @@
+- role: "PhD in CS"
+  company: "UMass Amherst"
+  company_url: "https://www.cics.umass.edu/"
+  logo: "images/logos/umass_logo.png"
+  dates: "2023 - Present"
+
 - role: "Research Intern"
   company: "Meta"
   company_url: "https://www.meta.com/emerging-tech/?utm_source=about.meta.com&utm_medium=redirect"
-  logo: "images/logos/meta_logo.png"   
+  logo: "images/logos/meta_logo.png"
   dates: "June 2026 - Present"
   # description: "Work on **3D reconstruction**."
 

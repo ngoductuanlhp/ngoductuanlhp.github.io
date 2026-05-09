@@ -45,9 +45,9 @@ layout: null
       </div>
       <div class="navbar-menu is-active">
         <div class="navbar-end">
+          <a class="navbar-item" href="#experience">Experience</a>
           <a class="navbar-item" href="#news">News</a>
           <a class="navbar-item" href="#publications">Publications</a>
-          <a class="navbar-item" href="#experience">Experience</a>
           <a class="navbar-item" href="#services">Services</a>
         </div>
       </div>
@@ -84,6 +84,32 @@ layout: null
 
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience strip. -->
+  <div class="hr">
+    <div class="container">
+      <hr>
+    </div>
+  </div>
+
+  <section class="section" id="experience">
+    <div class="container is-max-desktop">
+      <div class="experience-strip">
+        {% for exp in site.data.experience %}
+        <div class="experience-strip-item">
+          <a href="{{ exp.company_url }}" target="_blank" class="experience-strip-logo-link">
+            <img src="./{{ exp.logo }}" alt="{{ exp.company | strip_html }}" class="experience-strip-logo" />
+          </a>
+          <div class="experience-strip-company">
+            <a href="{{ exp.company_url }}" target="_blank">{{ exp.company }}</a>
+          </div>
+          <div class="experience-strip-role">{{ exp.role }}</div>
+          <div class="experience-strip-dates">{{ exp.dates }}</div>
+        </div>
+        {% endfor %}
       </div>
     </div>
   </section>
@@ -226,45 +252,6 @@ layout: null
     </div>
   </section>
 
-
-  <section class="section" id="experience">
-    <div class="container is-max-desktop">
-      <div class="hr"><hr></div>
-      <h2 class="title is-3">Experience</h2>
-      <div class="content">
-        <ul class="experience-list">
-          {% for exp in site.data.experience %}
-          <li class="experience-item">
-            <div class="experience-header">
-              <div class="experience-title-block">
-                {% if exp.logo %}
-                <a href="{{ exp.company_url }}" target="_blank">
-                  <img src="./{{ exp.logo }}" alt="{{ exp.company }}" class="experience-logo" />
-                </a>
-                {% endif %}
-                <span>
-                  <span class="experience-role">{{ exp.role }}</span>,
-                  <span class="experience-team"><em>{{ exp.team }}</em></span>
-                  at <a href="{{ exp.company_url }}" target="_blank">{{ exp.company }}</a>
-                </span>
-              </div>
-              <span class="experience-dates">{{ exp.dates }}</span>
-            </div>
-            <div class="experience-desc">{{ exp.description | markdownify | remove: '<p>' | remove: '</p>' }}</div>
-            {% if exp.mentors %}
-            <div class="experience-mentors">
-              Mentor:
-              {% for mentor in exp.mentors %}
-              <a href="{{ mentor.url }}" target="_blank">{{ mentor.name }}</a>{% unless forloop.last %},{% endunless %}
-              {% endfor %}
-            </div>
-            {% endif %}
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
-  </section>
 
   <section class="section" id="services">
     <div class="container is-max-desktop">
