@@ -7,5 +7,14 @@ teaching:
         url: "https://kalo-ai.github.io/courses/game_programming/index.html"
 
 reviewing:
-  - type: "Reviewer"
-    venues: "CVPR (2024, 2025, 2026), ICCV (2025), ECCV (2024, 2026), NeurIPS (2025), ICLR (2026), AAAI (2025, 2026), IEEE Transactions on Image Processing"
+  - type: "Conference Reviewer"
+    venues:
+      - "CVPR '24/'25/'26"
+      - "ICCV '25"
+      - "ECCV '24/'26"
+      - "NeurIPS '25"
+      - "ICLR '26"
+      - "AAAI '25/'26"
+  - type: "Journal Reviewer"
+    venues:
+      - "IEEE Transactions on Image Processing"

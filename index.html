@@ -9,7 +9,20 @@ layout: null
 
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <meta name="description" content="{{ site.description | strip_html | truncate: 160 }}">
-  <title>{{ site.name }}</title>
+  <title>{{ site.name }}{% if site.tagline %} — {{ site.tagline }}{% endif %}</title>
+
+  <!-- Open Graph / Twitter card -->
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="{{ site.name }}{% if site.tagline %} — {{ site.tagline }}{% endif %}">
+  <meta property="og:description" content="{{ site.description | strip_html | truncate: 200 }}">
+  <meta property="og:image" content="{{ site.url }}/images/profile_img.jpg">
+  <meta property="og:url" content="{{ site.url }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ site.name }}{% if site.tagline %} — {{ site.tagline }}{% endif %}">
+  <meta name="twitter:description" content="{{ site.description | strip_html | truncate: 200 }}">
+  <meta name="twitter:image" content="{{ site.url }}/images/profile_img.jpg">
+  {% if site.twitter_username %}<meta name="twitter:creator" content="@{{ site.twitter_username }}">{% endif %}
+
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
   <script>
@@ -27,23 +40,27 @@ layout: null
   <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@700&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" rel="stylesheet">
   <link href="{{ '/css/bulma.min.css' | relative_url }}" rel="stylesheet">
   <link href="{{ '/css/index.css' | relative_url }}" rel="stylesheet">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script defer src="{{ '/js/fontawesome.all.min.js' | relative_url }}"></script>
-  <script src="{{ '/js/index.js' | relative_url }}"></script>
+  <script defer src="{{ '/js/index.js' | relative_url }}"></script>
 </head>
 
 <body>
 
-  <nav class="navbar is-white is-fixed-top site-navbar" role="navigation">
+  <nav class="navbar is-white is-fixed-top site-navbar" role="navigation" aria-label="main navigation">
     <div class="container is-max-desktop">
       <div class="navbar-brand">
-        <a class="navbar-item site-navbar-name" href="#">{{ site.name }}</a>
+        <a class="navbar-item site-navbar-name" href="/">{{ site.name }}</a>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="site-navbar-menu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
       </div>
-      <div class="navbar-menu is-active">
+      <div id="site-navbar-menu" class="navbar-menu">
         <div class="navbar-end">
           <a class="navbar-item" href="#experience">Experience</a>
           <a class="navbar-item" href="#news">News</a>
@@ -65,21 +82,33 @@ layout: null
         </div>
 
         <div class="column">
-          <h1 class="title">
+          <h1 class="title hero-name">
             <b>{{ site.name }}</b>
           </h1>
-          <div class="content has-text-justified">
+          {% if site.tagline %}<p class="hero-tagline">{{ site.tagline }}</p>{% endif %}
+          <div class="content hero-bio">
             {{ site.description | markdownify }}
             <div class="profile-links">
-              <span class="profile-links-sep">|</span>
-              <a class="external-link" href="assets/CV.pdf">CV</a>
-              <span class="profile-links-sep">|</span>
-              <a class="external-link" href="https://scholar.google.com/citations?user={{ site.google_scholar }}">Google Scholar</a>
-              <span class="profile-links-sep">|</span>
-              <a class="external-link" href="https://github.com/{{ site.github_username }}">Github</a>
-              <span class="profile-links-sep">|</span>
-              <a class="external-link" href="{{ site.linkedin_url }}">LinkedIn</a>
-              <span class="profile-links-sep">|</span>
+              <a class="profile-link" href="mailto:{{ site.email }}" title="Email" aria-label="Email">
+                <i class="fas fa-envelope"></i>
+              </a>
+              <a class="profile-link" href="assets/CV.pdf" title="CV" aria-label="CV">
+                <i class="fas fa-file-pdf"></i>
+              </a>
+              <a class="profile-link" href="https://scholar.google.com/citations?user={{ site.google_scholar }}" title="Google Scholar" aria-label="Google Scholar">
+                <i class="ai ai-google-scholar"></i>
+              </a>
+              <a class="profile-link" href="https://github.com/{{ site.github_username }}" title="GitHub" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+              <a class="profile-link" href="{{ site.linkedin_url }}" title="LinkedIn" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+              </a>
+              {% if site.twitter_username %}
+              <a class="profile-link" href="https://twitter.com/{{ site.twitter_username }}" title="Twitter" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
+              </a>
+              {% endif %}
             </div>
 
           </div>
@@ -129,7 +158,7 @@ layout: null
         <ul>
           {% for news in site.data.news %}
           <li {% if forloop.index > 5 %}class="news-extra" style="display:none;"{% endif %}>
-{{ news.date }}: {{ news.description | markdownify | remove: '<p>' | remove: '</p>' }}
+<span class="news-date">{{ news.date }}</span> {{ news.description | markdownify | remove: '<p>' | remove: '</p>' }}
           </li>
           {% endfor %}
         </ul>
@@ -142,12 +171,8 @@ layout: null
 
       <div class="hr"><hr></div>
 
-      <!-- <h2 class="title is-3" id="publications">Publications
-        <span class="publication-filter-btns">
-          <button class="button is-small" id="btn-selected" onclick="filterPublications('selected')">Selected</button>
-          <button class="button is-small" id="btn-all" onclick="filterPublications('all')">All</button>
-        </span>
-      </h2> -->
+      <h2 class="title is-3" id="publications">Publications</h2>
+      <p class="publication-note">* indicates equal contribution.</p>
 
       {% for publication in site.data.publications %}
       <div class="publication-block columns{% if publication.highlight %} publication-highlight{% endif %}" data-highlight="{{ publication.highlight }}">
@@ -201,7 +226,7 @@ layout: null
             <div class="publication-venue">
               <span>{{ publication.venue }}</span>
               {% for award in publication.awards %}
-                <span class="publication-venue-emph">{{ award }}<span>
+                <span class="publication-venue-emph">{{ award }}</span>
               {% endfor %}
             </div>
             <p class="publication-description">{{ publication.description }}</p>
@@ -257,17 +282,26 @@ layout: null
     <div class="container is-max-desktop">
       <div class="hr"><hr></div>
       <h2 class="title is-3">Academic Services</h2>
-      <div class="content">
+      <div class="content services-content">
         {% for item in site.data.services.teaching %}
-        <p>
-          <b>{{ item.role }}</b>:
-          {% for course in item.courses %}
-            <a href="{{ course.url }}" target="_blank">{{ course.name }}</a>{% unless forloop.last %},{% endunless %}
-          {% endfor %}
-        </p>
+        <div class="service-row">
+          <span class="service-label">{{ item.role }}</span>
+          <span class="service-items">
+            {% for course in item.courses %}
+              <a class="service-chip" href="{{ course.url }}" target="_blank">{{ course.name }}</a>
+            {% endfor %}
+          </span>
+        </div>
         {% endfor %}
         {% for item in site.data.services.reviewing %}
-        <p><b>{{ item.type }}</b>: {{ item.venues }}</p>
+        <div class="service-row">
+          <span class="service-label">{{ item.type }}</span>
+          <span class="service-items">
+            {% for venue in item.venues %}
+              <span class="service-chip">{{ venue }}</span>
+            {% endfor %}
+          </span>
+        </div>
         {% endfor %}
       </div>
     </div>
@@ -278,40 +312,24 @@ layout: null
   <footer class="footer">
     <div class="container">
       <div class="content footer-links has-text-centered">
-        <a href="mailto:{{ site.email }}">
+        <a href="mailto:{{ site.email }}" aria-label="Email">
           <i class="fas fa-envelope"></i>
         </a>
-        <a class="external-link" href="https://github.com/{{ site.github_username }}">
+        <a class="external-link" href="https://github.com/{{ site.github_username }}" aria-label="GitHub">
           <i class="fab fa-github"></i>
         </a>
-        <a class="external-link" href="https://scholar.google.com/citations?user={{ site.google_scholar }}">
+        <a class="external-link" href="https://scholar.google.com/citations?user={{ site.google_scholar }}" aria-label="Google Scholar">
           <i class="ai ai-google-scholar"></i>
         </a>
-      </div>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-8">
-          <div class="content">
-            <p>
-              Feel free to <a href="https://github.com/ngoductuanlhp/ngoductuanlhp.github.io">borrow this template</a>.
-            </p>
-          </div>
-        </div>
       </div>
     </div>
   </footer>
 
-  <!-- Content -->
-  <div class="container mt-5" hidden="hidden">
-    {{ content }}
-    <a href="javascript:toggleblock('notice')" style="text-align:center;font-size:70%;color:#808080">▶
-      ngoductuanlhp.github.io's clustrmaps 🌎</a>
-    <div id="notice" style="display: none; color: rgb(222, 222, 222); font-size: 0.5em;">
-      <p>
-        <a href="https://clustrmaps.com/site/1bsis" 
-          title="Visit tracker"><img 
-          src="//www.clustrmaps.com/map_v2.png?d=LDoksBua9TM7k5U1CIlCUOWT0gZzDbDxbZBlHZ496VY&cl=ffffff"></a>
-      </p>
-    </div>
+  <!-- Clustrmaps visit tracker (hidden from view; image still loads so visits are counted). -->
+  <div aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;">
+    <a href="https://clustrmaps.com/site/1bsis" title="Visit tracker">
+      <img src="//www.clustrmaps.com/map_v2.png?d=LDoksBua9TM7k5U1CIlCUOWT0gZzDbDxbZBlHZ496VY&cl=ffffff" alt="">
+    </a>
   </div>
 
 </body>

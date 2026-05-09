@@ -1,4 +1,3 @@
-
 function toggleNews(btn) {
     var extras = document.querySelectorAll('li.news-extra');
     var expanded = btn.getAttribute('data-expanded') === 'true';
@@ -23,8 +22,10 @@ function filterPublications(mode) {
             }
         }
     });
-    document.getElementById('btn-all').classList.toggle('is-dark', mode === 'all');
-    document.getElementById('btn-selected').classList.toggle('is-dark', mode === 'selected');
+    var btnAll = document.getElementById('btn-all');
+    var btnSelected = document.getElementById('btn-selected');
+    if (btnAll) btnAll.classList.toggle('is-dark', mode === 'all');
+    if (btnSelected) btnSelected.classList.toggle('is-dark', mode === 'selected');
 }
 
 window.addEventListener('scroll', function() {
@@ -32,7 +33,27 @@ window.addEventListener('scroll', function() {
     if (btn) btn.style.display = window.scrollY > 400 ? 'block' : 'none';
 });
 
-$(document).ready(function() {
-    // filterPublications('selected');
+document.addEventListener('DOMContentLoaded', function() {
     filterPublications('all');
-})
+
+    // Bulma navbar burger toggle.
+    var burgers = document.querySelectorAll('.navbar-burger');
+    burgers.forEach(function(burger) {
+        burger.addEventListener('click', function() {
+            var targetId = burger.dataset.target;
+            var target = document.getElementById(targetId);
+            burger.classList.toggle('is-active');
+            if (target) target.classList.toggle('is-active');
+        });
+    });
+
+    // Close mobile menu after tapping a nav link.
+    document.querySelectorAll('#site-navbar-menu .navbar-item').forEach(function(item) {
+        item.addEventListener('click', function() {
+            var menu = document.getElementById('site-navbar-menu');
+            var burger = document.querySelector('.navbar-burger');
+            if (menu) menu.classList.remove('is-active');
+            if (burger) burger.classList.remove('is-active');
+        });
+    });
+});

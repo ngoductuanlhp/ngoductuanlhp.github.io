@@ -14,6 +14,11 @@ body {
 
 .hr {
     margin: 0;
+
+    hr {
+        background-color: #eee;
+        height: 1px;
+    }
 }
 
 section.section {
@@ -43,35 +48,68 @@ section.section {
     font-weight: 700;
 }
 
-.portrait {
-    border-radius: 2%;
-    overflow: hidden;
+.hero-name {
+    margin-bottom: 0.25rem !important;
+}
 
-    img { transform: scale(1.2); }
+.hero-tagline {
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 1rem;
+    letter-spacing: 0.01em;
+}
+
+.hero-bio {
+    text-align: left;
+}
+
+.portrait {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+
+    img { transform: scale(1.2); display: block; width: 100%; }
+}
+
+@media (max-width: 768px) {
+    .portrait {
+        max-width: 240px;
+        margin: 0 auto;
+    }
 }
 
 .footer .footer-links a {
     font-size: 25px;
     color: #000;
+    margin: 0 0.5rem;
 }
 
 .profile-links {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    font-size: 1rem;
-    margin-top: 0.75rem;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 1rem;
 
-    a {
-        color: #3273dc;
-        font-weight: 500;
+    .profile-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: #f4f5f7;
+        color: #444;
+        font-size: 1.05rem;
         text-decoration: none;
+        transition: background 0.15s, color 0.15s, transform 0.15s;
 
-        &:hover { text-decoration: underline; }
-    }
-
-    .profile-links-sep {
-        color: #aaa;
+        &:hover {
+            background: #3273dc;
+            color: #fff;
+            transform: translateY(-1px);
+        }
     }
 }
 
@@ -103,8 +141,8 @@ section.section {
 }
 
 .experience-strip-logo {
-    max-height: 80px;
-    max-width: 100%;
+    max-height: 70px;
+    max-width: 140px;
     object-fit: contain;
 }
 
@@ -118,12 +156,6 @@ section.section {
     a {
         color: inherit;
         &:hover { color: #3273dc; }
-    }
-
-    em {
-        font-weight: 500;
-        font-size: 0.7em;
-        color: #666;
     }
 }
 
@@ -141,13 +173,34 @@ section.section {
     line-height: 1.25;
 }
 
-.publication-filter-btns {
-    margin-left: 1rem;
-    vertical-align: middle;
+#news .content ul {
+    li {
+        margin-bottom: 0.4rem;
+    }
+}
 
-    .button {
-        font-size: 0.8rem;
-        margin-right: 0.25rem;
+.news-date {
+    font-weight: 600;
+    color: #3273dc;
+    margin-right: 0.35rem;
+    font-variant-numeric: tabular-nums;
+}
+
+.news-toggle {
+    display: inline-block;
+    padding: 0.4rem 0.9rem;
+    margin-top: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    color: #444 !important;
+    font-size: 0.88rem;
+    font-weight: 500 !important;
+    background: #fafafa;
+    transition: background 0.15s, border-color 0.15s;
+
+    &:hover {
+        background: #f0f0f0;
+        border-color: #ccc;
     }
 }
 
@@ -171,11 +224,18 @@ section.section {
     &:hover { background: #2160c4; }
 }
 
+.publication-note {
+    font-size: 0.85rem;
+    color: #777;
+    margin-top: -0.4rem;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
 .publication-highlight {
-    background-color: #fffbe6;
-    border-left: 4px solid #f5c518;
-    border-radius: 6px;
-    padding: 0.5rem 0.75rem !important;
+    border-left: 3px solid #f5c518;
+    border-radius: 4px;
+    padding: 0.4rem 0.75rem !important;
 }
 
 .publication-block {
@@ -211,7 +271,7 @@ section.section {
     .publication-authors {
         .author-me {
             color: #000;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         a {
@@ -243,5 +303,51 @@ section.section {
     .publication-links {
         margin: 0 !important;
         margin-top: 0.5em !important;
+    }
+}
+
+.services-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.service-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem 0.75rem;
+}
+
+.service-label {
+    font-weight: 700;
+    color: #222;
+    flex-shrink: 0;
+
+    &::after {
+        content: ":";
+    }
+}
+
+.service-items {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.service-chip {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    background: #f4f5f7;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    color: #333;
+    text-decoration: none;
+    transition: background 0.15s, color 0.15s;
+    line-height: 1.4;
+
+    &:is(a):hover {
+        background: #3273dc;
+        color: #fff;
     }
 }
