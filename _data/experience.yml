@@ -8,14 +8,14 @@
   company: "Meta"
   company_url: "https://www.meta.com/emerging-tech/?utm_source=about.meta.com&utm_medium=redirect"
   logo: "images/logos/meta_logo.png"
-  dates: "June 2026 - "
+  dates: "Jun 2026 - "
   # description: "Work on **3D reconstruction**."
 
 
 - role: "Research Intern"
   company: "Adobe Research"
   company_url: "https://research.adobe.com/"
-  logo: "images/logos/adobe_logo.png"   
+  logo: "images/logos/adobe_logo.svg"   
   dates: "May 2025 - Nov 2025"
   description: "Work on **3D reconstruction**."
   mentors:
