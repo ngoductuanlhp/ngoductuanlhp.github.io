@@ -141,7 +141,8 @@ section.section {
 }
 
 .experience-strip-logo {
-    max-height: 70px;
+    height: 70px;
+    width: auto;
     max-width: 140px;
     object-fit: contain;
 }
