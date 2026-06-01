@@ -1,3 +1,19 @@
+- id: VolFill
+  title: "VolFill: Single-View Amodal 3D Scene Reconstruction with Volumetric Flow Matching"
+  highlight: true
+  venue: preprint, 2026
+  description: "Recover the complete 3D scene — including occluded surfaces behind the visible geometry — from a single RGB image, using volumetric flow matching."
+  project_page: "https://ngoductuanlhp.github.io/VolFill/"
+  github: ngoductuanlhp/VolFill
+  arxiv: null            # TODO: add arXiv ID (e.g. 2603.xxxxx) once available
+  image: volfill.png
+  image_mouseover: null  # TODO: add demo .mp4 (e.g. volfill_video.mp4) once available
+  first_authors:
+    - tuanngo
+  authors:
+    - chuanggan
+    - evangeloskalogerakis
+
 - id: DAGE
   title: "DAGE: Dual-Stream Architecture for Efficient and Fine-Grained Geometry Estimation"
   highlight: true
