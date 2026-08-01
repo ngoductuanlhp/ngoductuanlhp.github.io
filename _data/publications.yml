@@ -5,7 +5,7 @@
   description: "Recover the complete 3D scene — including occluded surfaces behind the visible geometry — from a single RGB image, using volumetric flow matching."
   project_page: "https://ngoductuanlhp.github.io/VolFill/"
   github: ngoductuanlhp/VolFill
-  arxiv: 2605.31466            # TODO: add arXiv ID (e.g. 2603.xxxxx) once available
+  arxiv: "2605.31466"            # TODO: add arXiv ID (e.g. 2603.xxxxx) once available
   image: volfill.png
   image_mouseover: null  # TODO: add demo .mp4 (e.g. volfill_video.mp4) once available
   first_authors:
@@ -21,7 +21,7 @@
   description: "Estimate accurate camera poses and high-fidelity 3D geometry at 2K resolution via an efficient dual-stream architecture."
   project_page: "https://ngoductuanlhp.github.io/dage-site/"
   github: ngoductuanlhp/DAGE
-  arxiv: 2603.03744
+  arxiv: "2603.03744"
   image: dage.png
   image_mouseover: dage_video.mp4
   first_authors:
@@ -40,7 +40,7 @@
   description: "Accelerate dense, long-range, 3D point tracking with 5-100x speedup"
   project_page: "https://snap-research.github.io/DELTAv2/"
   github: snap-research/DenseTrack3Dv2
-  arxiv: 2508.01170
+  arxiv: "2508.01170"
   image: deltav2.png
   image_mouseover: deltav2_video.mp4
   first_authors:
@@ -61,7 +61,7 @@
     - Highlight
   description: "A diffusion model that generates 4D video -- a grid of video frames with both time and viewpoint axes."
   project_page: "https://snap-research.github.io/4Real-Video/"
-  arxiv: 2412.04462
+  arxiv: "2412.04462"
   image: 4real_video.png
   image_mouseover: 4real_video.mp4
   first_authors:
@@ -84,7 +84,7 @@
   description: "Capture the dense, long-range, 3D point trajectories from casual videos in a feed-forward manner"
   project_page: "https://snap-research.github.io/DELTA/"
   github: snap-research/DELTA_densetrack3d
-  arxiv: 2410.24211
+  arxiv: "2410.24211"
   image: delta.png
   image_mouseover: yellow-duck.mp4
   first_authors:
@@ -104,7 +104,7 @@
   description: "Tackle the open-vocabulary 3D point cloud instance segmentation by using 2D prior"
   project_page: "https://open3dis.github.io/"
   github: VinAIResearch/Open3DIS
-  arxiv: 2312.10671
+  arxiv: "2312.10671"
   # video: "https://www.youtube.com/watch?v=uoOApyX-NUY"
   image: open3dis_demo.jpg
   # image_mouseover: isbnet_demo.jpg
@@ -124,7 +124,7 @@
   description: "Tackle the box-supervised 3D point cloud instance segmentation by using Gaussian Processes to generate pseudo labels"
   # project_page: "https://hypernerf.github.io"
   github: VinAIResearch/GaPro
-  arxiv: 2307.13251
+  arxiv: "2307.13251"
   # video: "https://www.youtube.com/watch?v=uoOApyX-NUY"
   image: gapro_demo.jpg
   # image_mouseover: isbnet_demo.jpg
@@ -141,7 +141,7 @@
   description: "Introduce an efficient sampling strategy and propose leveraging the bounding box as a geometric cue for the 3D point cloud instance segmentation"
   # project_page: "https://hypernerf.github.io"
   github: VinAIResearch/ISBNet
-  arxiv: 2303.00246
+  arxiv: "2303.00246"
   video: "https://www.youtube.com/watch?v=uoOApyX-NUY"
   image: isbnet_demo.jpg
   # image_mouseover: isbnet_demo.jpg
@@ -157,7 +157,7 @@
   description: "Propose a new task, Few-shot 3D point cloud instance segmentation, and introduce a geodesic-based 3D instance segmenter"
   # project_page: "https://fig-nerf.github.io"
   github: VinAIResearch/GeoFormer
-  arxiv: 2207.10859
+  arxiv: "2207.10859"
   image: geoformer_demo.jpg
   # image_mouseover: geoformer_demo.jpg
   first_authors:
