@@ -251,7 +251,6 @@ layout: null
                 <span class="publication-venue-emph">{{ award }}</span>
               {% endfor %}
             </div>
-            <p class="publication-description">{{ publication.description }}</p>
             <!-- Publication Links. -->
             <div class="publication-links buttons field has-addons">
               {% if publication.project_page %}
@@ -290,8 +289,22 @@ layout: null
                 <span>Video</span>
               </a>
               {% endif %}
+              {% if publication.description %}
+              <button type="button" class="button is-small is-ghost tldr-toggle" aria-expanded="false" aria-controls="tldr-{{ forloop.index }}">
+                <span class="icon"><i class="fas fa-lightbulb"></i></span>
+                <span>TL;DR</span>
+                <span class="icon tldr-chevron"><i class="fas fa-chevron-down"></i></span>
+              </button>
+              {% endif %}
             </div>
             <!--/ Publication Links. -->
+            {% if publication.description %}
+            <div class="tldr" id="tldr-{{ forloop.index }}" role="region" aria-label="Summary of {{ publication.id }}">
+              <div class="tldr-inner">
+                <p class="tldr-card">{{ publication.description | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>
+              </div>
+            </div>
+            {% endif %}
           </div>
         </div>
       </div>

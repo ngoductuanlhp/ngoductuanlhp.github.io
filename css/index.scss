@@ -23,6 +23,7 @@
     --award: firebrick;
     --pub-hl-bg: #f4f7fe;
     --pub-hl-border: #dce5f8;
+    --tldr-bg: rgba(50, 115, 220, 0.07);
     --shadow: rgba(0, 0, 0, 0.08);
 }
 
@@ -46,6 +47,7 @@ html[data-theme="dark"] {
     --award: #ff7b72;
     --pub-hl-bg: #1d2331;
     --pub-hl-border: #34405a;
+    --tldr-bg: rgba(110, 160, 255, 0.09);
     --shadow: rgba(0, 0, 0, 0.4);
 }
 
@@ -416,14 +418,90 @@ html[data-theme="dark"] .experience-strip-logo {
         }
     }
 
-    .publication-description {
-        color: var(--text-body);
-        margin: 0.5em 0;
-    }
-
     .publication-links {
         margin: 0 !important;
         margin-top: 0.5em !important;
+    }
+}
+
+.tldr-toggle {
+    .tldr-chevron {
+        font-size: 0.7em;
+        transition: transform 0.25s ease;
+    }
+
+    &[aria-expanded="true"] {
+        background: var(--tldr-bg);
+        text-decoration: none;
+
+        .tldr-chevron { transform: rotate(180deg); }
+    }
+}
+
+// Beats Bulma's `.buttons.has-addons .button` radius reset.
+.buttons.has-addons .button.tldr-toggle {
+    border-radius: 999px;
+}
+
+// Animates height via the 0fr -> 1fr grid-row trick; visibility keeps the
+// collapsed text out of the tab order and accessibility tree.
+.tldr {
+    display: grid;
+    grid-template-rows: 0fr;
+    visibility: hidden;
+    transition: grid-template-rows 0.3s ease, visibility 0s linear 0.3s;
+
+    &.is-open {
+        grid-template-rows: 1fr;
+        visibility: visible;
+        transition: grid-template-rows 0.3s ease;
+
+        .tldr-card {
+            opacity: 1;
+            transform: none;
+        }
+    }
+}
+
+.tldr-inner {
+    min-height: 0;
+    overflow: hidden;
+}
+
+.content p.tldr-card,
+.tldr-card {
+    position: relative;
+    margin: 0.6rem 0 0.25rem;
+    padding: 0.7rem 1rem 0.75rem 1.1rem;
+    border-radius: 10px;
+    background: var(--tldr-bg);
+    color: var(--text-body);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    opacity: 0;
+    transform: translateY(-4px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.6rem;
+        bottom: 0.6rem;
+        width: 3px;
+        border-radius: 3px;
+        background: var(--accent);
+    }
+
+    strong {
+        color: var(--text-strong);
+        font-weight: 600;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tldr, .tldr.is-open, .tldr-card, .tldr-toggle .tldr-chevron {
+        transition: none !important;
     }
 }
 

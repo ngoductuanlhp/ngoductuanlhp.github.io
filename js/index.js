@@ -61,6 +61,15 @@ window.addEventListener('scroll', function() {
 document.addEventListener('DOMContentLoaded', function() {
     filterPublications('all');
 
+    document.querySelectorAll('.tldr-toggle').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var panel = document.getElementById(btn.getAttribute('aria-controls'));
+            var open = btn.getAttribute('aria-expanded') !== 'true';
+            btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+            if (panel) panel.classList.toggle('is-open', open);
+        });
+    });
+
     applyTheme(document.documentElement.dataset.themePref || 'system');
     document.querySelectorAll('[data-theme-option]').forEach(function(btn) {
         btn.addEventListener('click', function() { setTheme(btn.dataset.themeOption); });

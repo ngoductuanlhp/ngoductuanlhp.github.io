@@ -139,7 +139,7 @@ layout: null
               </span>
               {% endfor %}
             </div>
-            {{ publication.description }}
+            {{ publication.description | markdownify | strip_html }}
           </div>
           <div class="column is-one-fifths has-text-right">
             {{ publication.venue }}

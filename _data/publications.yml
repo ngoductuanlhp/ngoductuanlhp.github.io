@@ -2,7 +2,7 @@
   title: "VolFill: Single-View Amodal 3D Scene Reconstruction with Volumetric Flow Matching"
   highlight: true
   venue: NeurIPS, 2026
-  description: "Reconstructs the complete 3D scene from a single RGB image, including surfaces hidden behind visible geometry, by generating a structured volumetric representation instead of regressing per-pixel depth."
+  description: "Reconstructs the **complete 3D scene from a single RGB image**, including **surfaces hidden behind visible geometry**, by generating a structured volumetric representation instead of regressing per-pixel depth."
   project_page: "https://ngoductuanlhp.github.io/VolFill/"
   github: ngoductuanlhp/VolFill
   arxiv: "2605.31466"
@@ -18,7 +18,7 @@
   title: "DAGE: Dual-Stream Architecture for Efficient and Fine-Grained Geometry Estimation"
   highlight: true
   venue: CVPR, 2026
-  description: "Recovers sharp, view-consistent geometry and accurate camera poses from uncalibrated videos at up to 2K resolution, using a dual-stream transformer that separates global context from fine detail."
+  description: "Recovers sharp, view-consistent geometry and accurate camera poses from uncalibrated videos **at up to 2K resolution**, using a **dual-stream transformer** that separates global context from fine detail."
   project_page: "https://ngoductuanlhp.github.io/dage-site/"
   github: ngoductuanlhp/DAGE
   arxiv: "2603.03744"
@@ -37,7 +37,7 @@
 - id: DELTAv2
   title: "DELTAv2: Accelerating Dense 3D Tracking"
   venue: Preprint, 2025
-  description: "Speeds up dense, long-range 3D point tracking by 5–100× while keeping state-of-the-art accuracy, through coarse-to-fine trajectory expansion and cheaper correlation features."
+  description: "Speeds up dense, long-range 3D point tracking by **5–100×** while keeping **state-of-the-art accuracy**, through coarse-to-fine trajectory expansion and cheaper correlation features."
   project_page: "https://snap-research.github.io/DELTAv2/"
   github: snap-research/DenseTrack3Dv2
   arxiv: "2508.01170"
@@ -59,7 +59,7 @@
   venue: CVPR, 2025
   awards: 
     - Highlight
-  description: "Generates photorealistic 4D videos, a grid of frames spanning both time and viewpoint, with a two-stream diffusion transformer that keeps them consistent across views and over time."
+  description: "Generates **photorealistic 4D videos**, a grid of frames spanning both time and viewpoint, with a **two-stream diffusion transformer** that keeps them consistent across views and over time."
   project_page: "https://snap-research.github.io/4Real-Video/"
   arxiv: "2412.04462"
   image: 4real_video.png
@@ -81,7 +81,7 @@
   title: "DELTA: Dense Efficient Long-range 3D Tracking for Any video"
   highlight: true
   venue: ICLR, 2025
-  description: "Tracks every pixel in 3D across long monocular videos, running over 8× faster than prior methods while achieving state-of-the-art dense 2D and 3D tracking accuracy."
+  description: "**Tracks every pixel in 3D** across long monocular videos, running **over 8× faster** than prior methods while achieving state-of-the-art dense 2D and 3D tracking accuracy."
   project_page: "https://snap-research.github.io/DELTA/"
   github: snap-research/DELTA_densetrack3d
   arxiv: "2410.24211"
@@ -101,7 +101,7 @@
   title: "Open3DIS: Open-vocabulary 3D Instance Segmentation with 2D Mask Guidance"
   highlight: true
   venue: CVPR, 2024
-  description: "Segments 3D object instances from open-vocabulary queries by lifting 2D instance masks across frames into 3D proposals, recovering small and geometrically ambiguous objects that 3D-only methods miss."
+  description: "Segments 3D object instances from open-vocabulary queries by **lifting 2D instance masks** across frames into 3D proposals, recovering **small and geometrically ambiguous objects** that 3D-only methods miss."
   project_page: "https://open3dis.github.io/"
   github: VinAIResearch/Open3DIS
   arxiv: "2312.10671"
@@ -121,7 +121,7 @@
 - id: GaPro
   title: "GaPro: Box-Supervised 3D Point Cloud Instance Segmentation Using Gaussian Processes as Pseudo Labelers"
   venue: ICCV, 2023
-  description: "Learns 3D point cloud instance segmentation from bounding boxes alone, using Gaussian Processes to turn box annotations into pseudo instance masks, and performs competitively with fully supervised methods."
+  description: "Learns 3D point cloud instance segmentation **from bounding boxes alone**, using **Gaussian Processes** to turn box annotations into pseudo instance masks, and performs competitively with fully supervised methods."
   # project_page: "https://hypernerf.github.io"
   github: VinAIResearch/GaPro
   arxiv: "2307.13251"
@@ -138,7 +138,7 @@
   title: "ISBNet: a 3D Point Cloud Instance Segmentation Network with Instance-aware Sampling and Box-aware Dynamic Convolution"
   highlight: true
   venue: CVPR, 2023
-  description: "Segments 3D point cloud instances without clustering, using instance-aware sampling and box-aware dynamic convolution, and sets new state-of-the-art results on ScanNetV2, S3DIS, and STPLS3D."
+  description: "Segments 3D point cloud instances **without clustering**, using instance-aware sampling and box-aware dynamic convolution, and sets **new state-of-the-art results** on ScanNetV2, S3DIS, and STPLS3D."
   # project_page: "https://hypernerf.github.io"
   github: VinAIResearch/ISBNet
   arxiv: "2303.00246"
@@ -154,7 +154,7 @@
 - id: GeoFormer
   title: "Geodesic-Former: A Geodesic-Guided Few-Shot 3D Point Cloud Instance Segmenter"
   venue: ECCV, 2022
-  description: "Introduces few-shot 3D point cloud instance segmentation and tackles it with a transformer guided by geodesic distance, which copes with the uneven point density of real 3D scans."
+  description: "Introduces **few-shot 3D point cloud instance segmentation** and tackles it with a transformer guided by **geodesic distance**, which copes with the uneven point density of real 3D scans."
   # project_page: "https://fig-nerf.github.io"
   github: VinAIResearch/GeoFormer
   arxiv: "2207.10859"
@@ -168,7 +168,7 @@
 - id: GAC3D
   title: "GAC3D: improving monocular 3D object detection with ground-guide model and adaptive convolution"
   venue: PeerJ, 2021
-  description: "Improves monocular 3D object detection with a ground-guide model built on the ground-plane assumption and a depth-adaptive convolution."
+  description: "Improves monocular 3D object detection with a **ground-guide model** built on the ground-plane assumption and a **depth-adaptive convolution**."
   # project_page: "https://fig-nerf.github.io"
   github: ngoductuanlhp/GAC3D
   open_access: "https://peerj.com/articles/cs-686/"

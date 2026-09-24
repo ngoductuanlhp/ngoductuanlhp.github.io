@@ -41,7 +41,8 @@ Push to `master` → `.github/workflows/jekyll.yml` builds with `JEKYLL_ENV=prod
   - `arxiv`: ID only, **always quoted** (`"2603.03744"`), because unquoted IDs are parsed as floats and lose trailing zeros. Generates both the PDF and arXiv buttons.
   - `project_page`, `github` (`owner/repo`), `video`, `open_access` (PDF URL for non-arXiv papers), `awards[]` (red tag after venue), `highlight: true` (tinted, bordered card).
   - `image`: still in `images/`. `image_mouseover`: if it contains `mp4`, it **replaces** the still with an autoplay/loop/muted `<video>` (it's not a hover effect, despite the name). Otherwise it's ignored and `image` is shown.
-  - `id`: identifier only; not rendered.
+  - `id`: used in the TL;DR panel's `aria-label`; not otherwise rendered.
+  - `description`: one sentence, **hidden by default** behind a "TL;DR" toggle in the links row (JS in `js/index.js`; the collapse animation uses the `grid-template-rows: 0fr → 1fr` trick in `.tldr`). It supports markdown. Wrap 1–2 key phrases in `**…**` and they render in bold. `cv.html` strips the markup to plain text.
 - `_data/authors.yml`: author lookup keyed by ID. `is_me: true` renders without a link and in bold (`author-me`). An optional `middle_name` is supported.
 - `_data/news.yml`: `date` (e.g. `"[06/2026]"`) + markdown `description`. The first 5 are shown; the rest are toggled by `toggleNews()`. Newest first.
 - `_data/experience.yml`: the logo strip on the home page. Only `role`, `company`, `company_url`, `logo` (path from repo root), and `dates` are rendered. `description` and `mentors` are stored but **not rendered** anywhere.
