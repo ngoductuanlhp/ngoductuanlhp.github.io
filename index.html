@@ -289,16 +289,14 @@ layout: null
                 <span>Video</span>
               </a>
               {% endif %}
-              {% if publication.description %}
-              <button type="button" class="button is-small is-ghost tldr-toggle" aria-expanded="false" aria-controls="tldr-{{ forloop.index }}">
-                <span class="icon"><i class="fas fa-lightbulb"></i></span>
-                <span>TL;DR</span>
-                <span class="icon tldr-chevron"><i class="fas fa-chevron-down"></i></span>
-              </button>
-              {% endif %}
             </div>
             <!--/ Publication Links. -->
             {% if publication.description %}
+            <button type="button" class="tldr-toggle" aria-expanded="false" aria-controls="tldr-{{ forloop.index }}">
+              <i class="fas fa-lightbulb" aria-hidden="true"></i>
+              <span>TL;DR</span>
+              <i class="fas fa-chevron-down tldr-chevron" aria-hidden="true"></i>
+            </button>
             <div class="tldr" id="tldr-{{ forloop.index }}" role="region" aria-label="Summary of {{ publication.id }}">
               <div class="tldr-inner">
                 <p class="tldr-card">{{ publication.description | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>

@@ -24,6 +24,9 @@
     --pub-hl-bg: #f4f7fe;
     --pub-hl-border: #dce5f8;
     --tldr-bg: rgba(50, 115, 220, 0.07);
+    --tldr-btn-bg: rgba(50, 115, 220, 0.1);
+    --tldr-btn-bg-hover: rgba(50, 115, 220, 0.18);
+    --tldr-btn-border: rgba(50, 115, 220, 0.35);
     --shadow: rgba(0, 0, 0, 0.08);
 }
 
@@ -48,6 +51,9 @@ html[data-theme="dark"] {
     --pub-hl-bg: #1d2331;
     --pub-hl-border: #34405a;
     --tldr-bg: rgba(110, 160, 255, 0.09);
+    --tldr-btn-bg: rgba(110, 160, 255, 0.14);
+    --tldr-btn-bg-hover: rgba(110, 160, 255, 0.24);
+    --tldr-btn-border: rgba(110, 160, 255, 0.45);
     --shadow: rgba(0, 0, 0, 0.4);
 }
 
@@ -424,23 +430,49 @@ html[data-theme="dark"] .experience-strip-logo {
     }
 }
 
+// Same pill language as .service-chip / .profile-link, with an accent tint so it
+// stands out from the plain link row; fills solid on hover and while open.
 .tldr-toggle {
+    appearance: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 0.5rem;
+    padding: 0.28rem 0.8rem 0.28rem 0.7rem;
+    border: 1px solid var(--tldr-btn-border);
+    border-radius: 999px;
+    background: var(--tldr-btn-bg);
+    color: var(--accent);
+    font-family: inherit;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    line-height: 1.4;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s, border-color 0.15s, transform 0.15s;
+
     .tldr-chevron {
         font-size: 0.7em;
         transition: transform 0.25s ease;
     }
 
+    &:hover {
+        background: var(--tldr-btn-bg-hover);
+        transform: translateY(-1px);
+    }
+
     &[aria-expanded="true"] {
-        background: var(--tldr-bg);
-        text-decoration: none;
+        background: var(--accent);
+        border-color: var(--accent);
+        color: #fff;
 
         .tldr-chevron { transform: rotate(180deg); }
     }
-}
 
-// Beats Bulma's `.buttons.has-addons .button` radius reset.
-.buttons.has-addons .button.tldr-toggle {
-    border-radius: 999px;
+    &:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+    }
 }
 
 // Animates height via the 0fr -> 1fr grid-row trick; visibility keeps the
