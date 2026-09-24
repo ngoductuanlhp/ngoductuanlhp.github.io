@@ -10,20 +10,34 @@ layout: null
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <meta name="description" content="{{ site.description | strip_html | truncate: 160 }}">
   <title>{{ site.name }}{% if site.tagline %} — {{ site.tagline }}{% endif %}</title>
+  <meta name="color-scheme" content="light dark">
+
+  <!-- Resolve theme before first paint to avoid a light flash in dark mode. -->
+  <script>
+    (function () {
+      var pref = 'system';
+      try { pref = localStorage.getItem('theme') || 'system'; } catch (e) {}
+      var dark = pref === 'dark' || (pref === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      document.documentElement.dataset.themePref = pref;
+      document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+    })();
+  </script>
 
   <!-- Open Graph / Twitter card -->
   <meta property="og:type" content="profile">
   <meta property="og:title" content="{{ site.name }}{% if site.tagline %} — {{ site.tagline }}{% endif %}">
   <meta property="og:description" content="{{ site.description | strip_html | truncate: 200 }}">
-  <meta property="og:image" content="{{ site.url }}/images/profile_img.jpg">
+  <meta property="og:image" content="{{ '/images/profile_img.jpg' | absolute_url }}">
   <meta property="og:url" content="{{ site.url }}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{ site.name }}{% if site.tagline %} — {{ site.tagline }}{% endif %}">
   <meta name="twitter:description" content="{{ site.description | strip_html | truncate: 200 }}">
-  <meta name="twitter:image" content="{{ site.url }}/images/profile_img.jpg">
+  <meta name="twitter:image" content="{{ '/images/profile_img.jpg' | absolute_url }}">
   {% if site.twitter_username %}<meta name="twitter:creator" content="@{{ site.twitter_username }}">{% endif %}
 
+  {% if site.google_analytics %}
   <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async
   <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -36,6 +50,7 @@ layout: null
 
     gtag('config', '{{ site.google_analytics }}');
   </script>
+  {% endif %}
 
   <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 
@@ -50,7 +65,7 @@ layout: null
 
 <body>
 
-  <nav class="navbar is-white is-fixed-top site-navbar" role="navigation" aria-label="main navigation">
+  <nav class="navbar is-fixed-top site-navbar" role="navigation" aria-label="main navigation">
     <div class="container is-max-desktop">
       <div class="navbar-brand">
         <a class="navbar-item site-navbar-name" href="/">{{ site.name }}</a>
@@ -66,6 +81,13 @@ layout: null
           <a class="navbar-item" href="#news">News</a>
           <a class="navbar-item" href="#publications">Publications</a>
           <a class="navbar-item" href="#services">Services</a>
+          <div class="navbar-item">
+            <div class="theme-switcher" role="group" aria-label="Color theme">
+              <button type="button" data-theme-option="light" title="Light theme" aria-label="Light theme"><i class="fas fa-sun"></i></button>
+              <button type="button" data-theme-option="dark" title="Dark theme" aria-label="Dark theme"><i class="fas fa-moon"></i></button>
+              <button type="button" data-theme-option="system" title="Match system theme" aria-label="Match system theme"><i class="fas fa-desktop"></i></button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -75,7 +97,7 @@ layout: null
     <div class="hero-body container is-max-desktop">
       <div class="columns is-vcentered">
 
-        <div class="column is-4">
+        <div class="column is-3">
           <div class="portrait">
             <img src="{{ '/images/profile_img.jpg' | relative_url }}" />
           </div>
@@ -321,6 +343,7 @@ layout: null
         <a class="external-link" href="https://scholar.google.com/citations?user={{ site.google_scholar }}" aria-label="Google Scholar">
           <i class="ai ai-google-scholar"></i>
         </a>
+        <p class="last-updated">Last updated: {{ site.time | date: "%B %-d, %Y" }}</p>
       </div>
     </div>
   </footer>

@@ -28,6 +28,31 @@ function filterPublications(mode) {
     if (btnSelected) btnSelected.classList.toggle('is-dark', mode === 'selected');
 }
 
+var systemDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+function applyTheme(pref) {
+    var dark = pref === 'dark' || (pref === 'system' && systemDark.matches);
+    document.documentElement.dataset.themePref = pref;
+    document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+    document.querySelectorAll('[data-theme-option]').forEach(function(btn) {
+        var active = btn.dataset.themeOption === pref;
+        btn.classList.toggle('is-active', active);
+        btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
+}
+
+function setTheme(pref) {
+    try {
+        if (pref === 'system') localStorage.removeItem('theme');
+        else localStorage.setItem('theme', pref);
+    } catch (e) {}
+    applyTheme(pref);
+}
+
+systemDark.addEventListener('change', function() {
+    if (document.documentElement.dataset.themePref === 'system') applyTheme('system');
+});
+
 window.addEventListener('scroll', function() {
     var btn = document.getElementById('back-to-top');
     if (btn) btn.style.display = window.scrollY > 400 ? 'block' : 'none';
@@ -35,6 +60,11 @@ window.addEventListener('scroll', function() {
 
 document.addEventListener('DOMContentLoaded', function() {
     filterPublications('all');
+
+    applyTheme(document.documentElement.dataset.themePref || 'system');
+    document.querySelectorAll('[data-theme-option]').forEach(function(btn) {
+        btn.addEventListener('click', function() { setTheme(btn.dataset.themeOption); });
+    });
 
     // Bulma navbar burger toggle.
     var burgers = document.querySelectorAll('.navbar-burger');

@@ -1,7 +1,21 @@
+- company: Meta Reality Labs
+  description: >-
+    Research Intern.
+  dates: "Jun 2026 - Present"
+
+- company: Adobe Research
+  description: >-
+    Research Intern. Worked on 3D reconstruction.
+  dates: "May 2025 - Nov 2025"
+
+- company: Snap Research
+  description: >-
+    Research Intern. Worked on 4D reconstruction and generation.
+  dates: "May 2024 - May 2025"
+
 - company: VinAI Research
   description: >-
     AI Research Resident of Computer Vision team.
     Worked on 3D point cloud instance segmentation and 3D object detection.
-  dates: "Aug 2021 - Jul 2022"
+  dates: "Aug 2021 - Jul 2023"
   location: HCMC, Vietnam
-

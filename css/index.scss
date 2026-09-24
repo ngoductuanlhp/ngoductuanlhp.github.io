@@ -3,6 +3,62 @@
 
 @import "base";
 
+:root {
+    color-scheme: light;
+    --bg: #fff;
+    --surface: #f4f5f7;
+    --surface-alt: #fafafa;
+    --text: #4a4a4a;
+    --text-strong: #222;
+    --text-body: #333;
+    --text-muted: #555;
+    --text-faint: #777;
+    --line: #eee;
+    --border: #ddd;
+    --border-hover: #ccc;
+    --accent: #3273dc;
+    --accent-hover: #2160c4;
+    --link: #485fc7;
+    --pub-link: #000;
+    --award: firebrick;
+    --pub-hl-bg: #f4f7fe;
+    --pub-hl-border: #dce5f8;
+    --shadow: rgba(0, 0, 0, 0.08);
+}
+
+html[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #16181d;
+    --surface: #252932;
+    --surface-alt: #1c1f25;
+    --text: #c3c8d1;
+    --text-strong: #eceff4;
+    --text-body: #d0d4db;
+    --text-muted: #a3aab5;
+    --text-faint: #8a919c;
+    --line: #2c3038;
+    --border: #3a3f48;
+    --border-hover: #4b515c;
+    --accent: #6ea0ff;
+    --accent-hover: #8ab3ff;
+    --link: #8ab3ff;
+    --pub-link: #eceff4;
+    --award: #ff7b72;
+    --pub-hl-bg: #1d2331;
+    --pub-hl-border: #34405a;
+    --shadow: rgba(0, 0, 0, 0.4);
+}
+
+// Bulma 0.9 hardcodes light colors; re-point them at the theme variables.
+html, .navbar, .navbar-menu { background-color: var(--bg); }
+body { color: var(--text); }
+a { color: var(--link); }
+a:hover { color: var(--accent-hover); }
+strong, .title, .content h1, .content h2, .content h3, .content h4 { color: var(--text-strong); }
+.navbar-burger { color: var(--text); }
+.button.is-ghost, .button.is-ghost:hover { color: var(--link); }
+.footer { background-color: var(--surface-alt); }
+
 body {
     padding-top: 52px;
 }
@@ -16,7 +72,7 @@ body {
     margin: 0;
 
     hr {
-        background-color: #eee;
+        background-color: var(--line);
         height: 1px;
     }
 }
@@ -27,19 +83,20 @@ section.section {
 }
 
 .site-navbar {
-    border-bottom: 1px solid #eee;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-
-    .site-navbar-name {
-        font-weight: 700;
-        color: #222;
-    }
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 1px 4px var(--shadow);
 
     .navbar-item {
         font-size: 0.95rem;
-        color: #444;
+        color: var(--text-muted);
+        background-color: transparent;
 
-        &:hover { color: #3273dc; }
+        &:hover, &:focus { color: var(--accent); background-color: transparent; }
+    }
+
+    .navbar-item.site-navbar-name {
+        font-weight: 700;
+        color: var(--text-strong);
     }
 }
 
@@ -55,7 +112,7 @@ section.section {
 .hero-tagline {
     font-size: 1.05rem;
     font-weight: 500;
-    color: #555;
+    color: var(--text-muted);
     margin-bottom: 1rem;
     letter-spacing: 0.01em;
 }
@@ -67,22 +124,33 @@ section.section {
 .portrait {
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 20px var(--shadow);
+    max-width: 240px;
+    margin: 0 auto;
 
     img { transform: scale(1.2); display: block; width: 100%; }
 }
 
 @media (max-width: 768px) {
     .portrait {
-        max-width: 240px;
-        margin: 0 auto;
+        max-width: 180px;
     }
 }
 
-.footer .footer-links a {
-    font-size: 25px;
-    color: #000;
-    margin: 0 0.5rem;
+.footer {
+    padding: 2rem 1.5rem 1.5rem;
+
+    .footer-links a {
+        font-size: 25px;
+        color: var(--text-strong);
+        margin: 0 0.5rem;
+    }
+}
+
+.last-updated {
+    margin-top: 0.75rem;
+    font-size: 0.8rem;
+    color: var(--text-faint);
 }
 
 .profile-links {
@@ -99,16 +167,56 @@ section.section {
         width: 38px;
         height: 38px;
         border-radius: 50%;
-        background: #f4f5f7;
-        color: #444;
+        background: var(--surface);
+        color: var(--text-muted);
         font-size: 1.05rem;
         text-decoration: none;
         transition: background 0.15s, color 0.15s, transform 0.15s;
 
         &:hover {
-            background: #3273dc;
+            background: var(--accent);
             color: #fff;
             transform: translateY(-1px);
+        }
+    }
+}
+
+.theme-switcher {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    padding: 2px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--surface);
+
+    button {
+        appearance: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 28px;
+        height: 28px;
+        padding: 0;
+        border: 0;
+        border-radius: 50%;
+        background: transparent;
+        color: var(--text-faint);
+        font-size: 0.85rem;
+        cursor: pointer;
+        transition: background 0.15s, color 0.15s;
+
+        &:hover { color: var(--text-strong); }
+
+        &.is-active {
+            background: var(--bg);
+            color: var(--text-strong);
+            box-shadow: 0 1px 3px var(--shadow);
+        }
+
+        &:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 1px;
         }
     }
 }
@@ -147,29 +255,36 @@ section.section {
     object-fit: contain;
 }
 
+// Logos are drawn for light backgrounds; give them a light tile in dark mode.
+html[data-theme="dark"] .experience-strip-logo {
+    background: #f4f5f7;
+    border-radius: 10px;
+    padding: 6px;
+}
+
 .experience-strip-company {
     font-weight: 700;
     font-size: 1rem;
-    color: #222;
+    color: var(--text-strong);
     line-height: 1.25;
     white-space: nowrap;
 
     a {
         color: inherit;
-        &:hover { color: #3273dc; }
+        &:hover { color: var(--accent); }
     }
 }
 
 .experience-strip-role {
     font-size: 0.92rem;
-    color: #333;
+    color: var(--text-body);
     margin-top: 0.15rem;
     line-height: 1.25;
 }
 
 .experience-strip-dates {
     font-size: 0.88rem;
-    color: #666;
+    color: var(--text-faint);
     margin-top: 0.15rem;
     line-height: 1.25;
 }
@@ -182,7 +297,7 @@ section.section {
 
 .news-date {
     font-weight: 600;
-    color: #3273dc;
+    color: var(--accent);
     margin-right: 0.35rem;
     font-variant-numeric: tabular-nums;
 }
@@ -191,17 +306,17 @@ section.section {
     display: inline-block;
     padding: 0.4rem 0.9rem;
     margin-top: 0.5rem;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border);
     border-radius: 4px;
-    color: #444 !important;
+    color: var(--text-muted) !important;
     font-size: 0.88rem;
     font-weight: 500 !important;
-    background: #fafafa;
+    background: var(--surface-alt);
     transition: background 0.15s, border-color 0.15s;
 
     &:hover {
-        background: #f0f0f0;
-        border-color: #ccc;
+        background: var(--surface);
+        border-color: var(--border-hover);
     }
 }
 
@@ -211,7 +326,7 @@ section.section {
     bottom: 2rem;
     right: 2rem;
     z-index: 999;
-    background: #3273dc;
+    background: var(--accent);
     color: #fff;
     border: none;
     border-radius: 50%;
@@ -219,38 +334,43 @@ section.section {
     height: 42px;
     font-size: 1.2rem;
     cursor: pointer;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 8px var(--shadow);
     transition: opacity 0.2s;
 
-    &:hover { background: #2160c4; }
+    &:hover { background: var(--accent-hover); }
 }
 
 .publication-note {
     font-size: 0.85rem;
-    color: #777;
+    color: var(--text-faint);
     margin-top: -0.4rem;
     margin-bottom: 1rem;
     font-style: italic;
 }
 
-.publication-highlight {
-    border-left: 3px solid #f5c518;
-    border-radius: 4px;
-    padding: 0.4rem 0.75rem !important;
-}
-
 .publication-block {
+    border: 1px solid transparent;
+    border-radius: 12px;
+    margin-top: 0 !important;
+    margin-bottom: 0.75rem !important;
+
+    &.publication-highlight {
+        background: var(--pub-hl-bg);
+        border-color: var(--pub-hl-border);
+        box-shadow: 0 2px 10px var(--shadow);
+    }
+
     .publication-title {
         width: fit-content;
         margin: 0 !important;
         font-weight: 600;
         font-size: 110% !important;
 
-        a { color: #000 }
+        a { color: var(--pub-link) }
     }
 
     .publication-venue {
-        color: #555;
+        color: var(--text-muted);
         width: fit-content;
         margin-top: 0;
     }
@@ -259,24 +379,24 @@ section.section {
         font-style: normal;
         font-size: 80%;
         font-weight: 500;
-        color: firebrick;
+        color: var(--award);
         padding-left: 0.25em;
     }
 
     .publication-awards {
-        color: firebrick;
+        color: var(--award);
         width: fit-content;
         font-weight: bolder;
     }
 
     .publication-authors {
         .author-me {
-            color: #000;
+            color: var(--pub-link);
             font-weight: 700;
         }
 
         a {
-            color: #000 !important;
+            color: var(--pub-link) !important;
         }
 
         a:hover {
@@ -285,7 +405,7 @@ section.section {
     }
 
     .publication-image {
-        border-radius: 4px;
+        border-radius: 8px;
         width: 100%;
         overflow: hidden;
 
@@ -297,7 +417,7 @@ section.section {
     }
 
     .publication-description {
-        color: #333;
+        color: var(--text-body);
         margin: 0.5em 0;
     }
 
@@ -322,7 +442,7 @@ section.section {
 
 .service-label {
     font-weight: 700;
-    color: #222;
+    color: var(--text-strong);
     flex-shrink: 0;
 
     &::after {
@@ -339,16 +459,16 @@ section.section {
 .service-chip {
     display: inline-block;
     padding: 0.2rem 0.6rem;
-    background: #f4f5f7;
+    background: var(--surface);
     border-radius: 999px;
     font-size: 0.85rem;
-    color: #333;
+    color: var(--text-body);
     text-decoration: none;
     transition: background 0.15s, color 0.15s;
     line-height: 1.4;
 
     &:is(a):hover {
-        background: #3273dc;
+        background: var(--accent);
         color: #fff;
     }
 }
