@@ -7,7 +7,7 @@
   github: ngoductuanlhp/VolFill
   arxiv: "2605.31466"
   image: volfill.jpg
-  image_mouseover: null  # TODO: add demo .mp4 (e.g. volfill_video.mp4) once available
+  image_mouseover: volfill_video.mp4
   first_authors:
     - tuanngo
   authors:
