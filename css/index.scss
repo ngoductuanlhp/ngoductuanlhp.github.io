@@ -129,6 +129,22 @@ section.section {
     text-align: left;
 }
 
+.open-to-work {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    margin-top: 0.5rem;
+    padding: 0.7rem 1rem;
+    background: var(--tldr-bg);
+    border: 1px solid var(--tldr-btn-border);
+    border-left: 4px solid var(--accent);
+    border-radius: 8px;
+    color: var(--text-strong);
+
+    i { color: var(--accent); }
+    strong { color: var(--accent); }
+}
+
 .portrait {
     border-radius: 16px;
     overflow: hidden;

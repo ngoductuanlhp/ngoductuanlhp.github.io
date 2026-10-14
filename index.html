@@ -110,6 +110,12 @@ layout: null
           {% if site.tagline %}<p class="hero-tagline">{{ site.tagline }}</p>{% endif %}
           <div class="content hero-bio">
             {{ site.description | markdownify }}
+            {% if site.open_to_work %}
+            <div class="open-to-work">
+              <i class="fas fa-bullhorn" aria-hidden="true"></i>
+              <span>{{ site.open_to_work | markdownify | remove: '<p>' | remove: '</p>' | strip }}</span>
+            </div>
+            {% endif %}
             <div class="profile-links">
               <a class="profile-link" href="mailto:{{ site.email }}" title="Email" aria-label="Email">
                 <i class="fas fa-envelope"></i>
