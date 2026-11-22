@@ -36,7 +36,7 @@
 
 - id: DELTAv2
   title: "DELTAv2: Accelerating Dense 3D Tracking"
-  venue: Preprint, 2025
+  venue: TPAMI, 2026
   description: "Speeds up dense, long-range 3D point tracking by **5–100×** while keeping **state-of-the-art accuracy**, through coarse-to-fine trajectory expansion and cheaper correlation features."
   project_page: "https://snap-research.github.io/DELTAv2/"
   github: snap-research/DenseTrack3Dv2
